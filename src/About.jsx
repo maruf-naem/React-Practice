@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 
 export default function About() {
   const [user, setUsers] = useState([]);
-  
+
   useEffect(() => {
     myData();
   }, []);
-
 
   async function myData() {
     const userdata = "https://dummyjson.com/users";
@@ -17,6 +16,7 @@ export default function About() {
 
   return (
     <div>
+      <h1>hello</h1>
       <ul>
         {user.map((item) => {
           return <li key={item.id}>{item.firstName}</li>;
