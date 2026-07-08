@@ -1,41 +1,41 @@
 // import { useEffect, useState } from "react";
 import { useEffect, useState } from "react";
-import { NavItem } from "react-bootstrap";
+import About from "./About";
 
 const App = () => {
-  const [userData, setUserData] = useState(null); // Initialized as null
-  const [openingday, setOpeningday] = useState([]);
+  // const [userData, setUserData] = useState(null); // Initialized as null
+  // const [openingday, setOpeningday] = useState([]);
 
-  function opentime(openingHoursObject) {
-    if (!openingHoursObject) return;
+  // function opentime(openingHoursObject) {
+  //   if (!openingHoursObject) return;
 
-    // Object.keys(x) automatically extracts all the keys (days) into an array
-    const daysArray = Object.keys(openingHoursObject);
-    setOpeningday(daysArray);
-    console.log(openingday);
-  }
+  //   // Object.keys(x) automatically extracts all the keys (days) into an array
+  //   const daysArray = Object.keys(openingHoursObject);
+  //   setOpeningday(daysArray);
+  //   console.log(openingday);
+  // }
 
-  async function callApi() {
-    const url = "http://localhost:3000/store";
-    let res = await fetch(url);
-    let data = await res.json();
-    setUserData(data);
-    opentime(data.openingHours); // Process days immediately when data arrives
-  }
+  // async function callApi() {
+  //   const url = "http://localhost:3000/store";
+  //   let res = await fetch(url);
+  //   let data = await res.json();
+  //   setUserData(data);
+  //   opentime(data.openingHours); // Process days immediately when data arrives
+  // }
 
-  // Call this function inside the API fetch success block
-  useEffect(() => {
-    callApi();
-  }, []);
+  // // Call this function inside the API fetch success block
+  // useEffect(() => {
+  //   callApi();
+  // }, []);
 
-  // Show a loading screen while the API fetches data
-  if (!userData) {
-    return <div>Loading store data...</div>;
-  }
+  // // Show a loading screen while the API fetches data
+  // if (!userData) {
+  //   return <div>Loading store data...</div>;
+  // }
 
   return (
     <div>
-      <header>
+      {/* <header>
         <div className="header">
           <h1 className="shopName">{userData.name}</h1>
           <div className="headerImages">
@@ -87,7 +87,8 @@ const App = () => {
             </ul>
           </div>
         </div>
-      </main>
+      </main> */}
+      <About />
     </div>
   );
 };
