@@ -1,7 +1,44 @@
 @import "tailwindcss";
 
 table{
-  width: 100%;
-  background-color: azure;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 50px;
+  border: 1px solid black;
+}
+thead{
+  display: flex;
+  flex-direction: column;
+}
+thead tr{
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+    border: 1px solid black;
+  padding: 5px 15px;
+
+  
+}
+
+tbody{
+  display:  flex;
+  flex-direction: column;
+}
+
+tbody tr{
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  padding: 5px 15px;
+
+}
+
+td{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px !important;
+  
 }
